@@ -7,6 +7,10 @@ app.use(bodyParser.json());
 
 const SECRET_KEY = 'secret_key';
 
+app.get('/',(req,res) =>{
+    res.send('auth');
+})
+
 app.post('/api/getToken', (req, res) => {
     const { userId } = req.body;
     
@@ -33,7 +37,7 @@ app.post('/api/verifyToken', (req, res) => {
     });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Auth service is running on port ${PORT}`);
 });
