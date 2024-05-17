@@ -11,7 +11,7 @@ app.get('/',(req,res) =>{
     res.send('auth');
 })
 
-app.post('/api/getToken', (req, res) => {
+app.post('/a/getToken', (req, res) => {
     const { userId } = req.body;
     
     if (!userId) {
@@ -22,7 +22,7 @@ app.post('/api/getToken', (req, res) => {
     res.json({ token });
 });
 
-app.post('/api/verifyToken', (req, res) => {
+app.post('/a/verifyToken', (req, res) => {
     const token = req.body.token;
     if (!token) {
       return res.status(401).send('Access denied. Token is required');
